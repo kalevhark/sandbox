@@ -30,9 +30,8 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = [
     '18.196.203.237',
-    '127.0.0.1',
-    '192.168.1.143',
-    'deb9server.lan'
+    '127.0.0.1', 'localhost',
+    '192.168.1.143', 'deb9server.lan'
 ]
 
 # Application definition
@@ -135,5 +134,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = ROOT_URL + '/media/'
 
 # https://www.google.com/recaptcha/intro/v3.html
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 GOOGLE_RECAPTCHA_SECRET_KEY = config('GOOGLE_RECAPTCHA_SECRET_KEY')
 GOOGLE_RECAPTCHA_PUBLIC_KEY = config('GOOGLE_RECAPTCHA_PUBLIC_KEY')
