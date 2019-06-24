@@ -4,4 +4,13 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse(f'Django: {django.get_version()}')
+    context = {
+        'django_version': f'Django: {django.get_version()}',
+        'request': request.META
+    }
+    # return HttpResponse(f'Django: {django.get_version()}')
+    return render(
+        request,
+        'home/home.html',
+        context
+    )
