@@ -1,5 +1,6 @@
 function  deleteFeedback(el){
     feedbackId  =  $(el).data('id')
+    var csrftoken = $("[name=csrfmiddlewaretoken]").val();
     $.ajax({
         beforeSend: function(xhr, settings) {
             if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
