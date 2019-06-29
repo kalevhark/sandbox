@@ -1,6 +1,11 @@
 function  deleteFeedback(el){
     feedbackId  =  $(el).data('id')
     $.ajax({
+        beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        },
         url:  `/feedback/delete/${feedbackId}`,
         type:  'post',
         dataType:  'json',
@@ -11,11 +16,6 @@ function  deleteFeedback(el){
 }
 
 $.ajax({
-    beforeSend: function(xhr, settings) {
-        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-            xhr.setRequestHeader("X-CSRFToken", csrftoken);
-        }
-    },
     url:  '/feedback/list/',
     type:  'get',
     dataType:  'json',
