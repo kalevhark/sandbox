@@ -13,6 +13,6 @@ urlpatterns = [
     path('feedbacks/<int:pk>', views.FeedbackDetail.as_view(), name='feedback_detail'), 
 ]
 
-if settings.DEBUG:
-    from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-    urlpatterns += staticfiles_urlpatterns()
+# if settings.DEBUG:
+#     from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+#     urlpatterns += staticfiles_urlpatterns()
