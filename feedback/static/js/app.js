@@ -11,8 +11,8 @@ function  createFeedback(){
         success:  function (data) {
             console.log(data);
             if (data.error) {
-              document.getElementById("#createFeedbackMessage").innerHTML="Viga!";
-            }
+              console.log("Viga!");
+            };
         }
     });
 }
