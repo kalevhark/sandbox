@@ -47,12 +47,12 @@ class  FeedbackUpdate(View):
         form = FeedbackForm(instance=feedback, data=request.POST)
         if form.is_valid():
             feedback = form.save()
-            data['room'] = model_to_dict(feedback)
+            data['feedback'] = model_to_dict(feedback)
         else:
             data['error'] =  "form not valid!"
         return JsonResponse(data)
 
-class  FeedbackDelete(View):
+class  FeedbackDelete(LoginRequiredMixin, View):
     def  post(self, request, pk):
         data =  dict()
         feedback = Feedback.objects.get(pk=pk)
@@ -60,5 +60,5 @@ class  FeedbackDelete(View):
             feedback.delete()
             data['message'] =  "Feedback deleted!"
         else:
-            data['message'] =  "Error!"
+            data['error'] =  "Error!"
         return JsonResponse(data)

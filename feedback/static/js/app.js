@@ -2,7 +2,7 @@ function  createFeedback(){
     $.ajax({
         url:  `/feedback/create/`,
         data: {
-          feedback_name: '',
+          feedback_name: 'nimi',
           feedback_contact: 'contact',
           feedback_text: 'text'
         },
@@ -10,10 +10,13 @@ function  createFeedback(){
         dataType:  'json',
         success:  function (data) {
             console.log(data);
+            var createFeedbackMessage = '';
             if (data.error) {
-              console.log("Viga!");
-              $("#createFeedbackMessage").text('Viga!');
+              createFeedbackMessage = data.error;
+            } else {
+              createFeedbackMessage = data.feedback.feedback_name;
             };
+            $("#createFeedbackMessage").text(createFeedbackMessage);
         }
     });
 }
