@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse
 from django.forms.models import model_to_dict
 from django.shortcuts import get_object_or_404
