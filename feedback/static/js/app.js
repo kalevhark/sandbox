@@ -10,6 +10,9 @@ function  createFeedback(){
         dataType:  'json',
         success:  function (data) {
             console.log(data);
+            if (data.error) {
+              document.getElementById("#createFeedbackMessage").innerHTML="Viga!";
+            }
         }
     });
 }
