@@ -1,3 +1,15 @@
+function  deleteFeedback(el){
+    feedbackId  =  $(el).data('id')
+    $.ajax({
+        url:  `/feedback/delete/${feedbackId}`,
+        type:  'post',
+        dataType:  'json',
+        success:  function (data) {
+            $(el).parents()[1].remove()
+        }
+    });
+}
+
 $.ajax({
     url:  '/feedback/list/',
     type:  'get',
@@ -25,15 +37,3 @@ $.ajax({
     })
     }
 });
-
-function  deleteFeedback(el){
-    feedbackId  =  $(el).data('id')
-    $.ajax({
-        url:  `/feedback/delete/${feedbackId}`,
-        type:  'post',
-        dataType:  'json',
-        success:  function (data) {
-            $(el).parents()[1].remove()
-        }
-    });
-}
