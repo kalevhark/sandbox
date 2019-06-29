@@ -12,6 +12,7 @@ function  createFeedback(){
             console.log(data);
             if (data.error) {
               console.log("Viga!");
+              $("#createFeedbackMessage").text('Viga!');
             };
         }
     });
