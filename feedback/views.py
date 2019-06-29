@@ -28,7 +28,7 @@ class  FeedbackDetail(View):
         data['feedback'] = model_to_dict(feedback)
         return JsonResponse(data)
 
-@method_decorator(csrf_exempt, name='dispatch')
+# @method_decorator(csrf_exempt, name='dispatch')
 class  FeedbackCreate(LoginRequiredMixin, CreateView):
     def  post(self, request):
         data =  dict()
