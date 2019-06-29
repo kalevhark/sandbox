@@ -1,3 +1,20 @@
+function  createFeedback(){
+    feedbackId  =  $(el).data('id')
+    $.ajax({
+        url:  `/feedback/create/`,
+        data: {
+          feedback_name: 'nimi',
+          feedback_contact: 'contact',
+          feedback_text: 'text'
+        },
+        type:  'post',
+        dataType:  'json',
+        success:  function (data) {
+            console.log(data);
+        }
+    });
+}
+
 function  deleteFeedback(el){
     feedbackId  =  $(el).data('id')
     $.ajax({
