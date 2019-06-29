@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-{% csrf_token %}
+
 <table  class="table table-bordered"  id="myTable">
 <thead>
 <th>
@@ -25,6 +25,7 @@ Actions
 
 <div id="feedbackform">
   <form action="" method="post">
+    {% csrf_token %}
     <label for="your_name">Your name: </label>
     <input id="your_name" type="text" name="your_name">
     <button  id="createFeedback"  class="btn" onclick="createFeedback()"> Create Feedback </button>
