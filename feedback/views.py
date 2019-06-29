@@ -54,6 +54,7 @@ class  FeedbackUpdate(View):
 
 class  FeedbackDelete(LoginRequiredMixin, View):
     def  post(self, request, pk):
+        print(pk)
         data =  dict()
         feedback = Feedback.objects.get(pk=pk)
         if feedback:
