@@ -1,10 +1,11 @@
 $.ajax({
-    url:  '/feedback/list',
+    url:  '/feedback/list/',
     type:  'get',
     dataType:  'json',
     success: function  (data) {
         let rows =  '';
         data.feedbacks.forEach(feedback => {
+        console.log(feedback.feedback_name);
         rows += `
         <tr>
             <td>${feedback.feedback_name}</td>
