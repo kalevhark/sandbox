@@ -1,12 +1,12 @@
 function  deleteFeedback(el){
     feedbackId  =  $(el).data('id')
-    var csrftoken = $("[name=csrfmiddlewaretoken]").val();
+//    var csrftoken = $("[name=csrfmiddlewaretoken]").val();
     $.ajax({
-        beforeSend: function(xhr, settings) {
-            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                xhr.setRequestHeader("X-CSRFToken", csrftoken);
-            }
-        },
+//        beforeSend: function(xhr, settings) {
+//            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+//                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+//            }
+//        },
         url:  `/feedback/delete/${feedbackId}`,
         type:  'post',
         dataType:  'json',
@@ -49,10 +49,11 @@ function csrfSafeMethod(method) {
     return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
 }
 
-//$.ajaxSetup({
-//    beforeSend: function(xhr, settings) {
-//        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-//            xhr.setRequestHeader("X-CSRFToken", csrftoken);
-//        }
-//    }
-//});
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            var csrftoken = $("[name=csrfmiddlewaretoken]").val();
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
