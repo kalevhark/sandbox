@@ -13,7 +13,7 @@ class  FeedbackForm(forms.ModelForm):
         model = Feedback
         fields =  '__all__'
 
-class  RoomList(View):
+class  FeedbackList(View):
     def  get(self, request):
         feedbacks =  list(Feedback.objects.all().values())
         data =  dict()
