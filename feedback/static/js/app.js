@@ -4,7 +4,7 @@ function  createFeedback(){
     $.ajax({
         url:  `/feedback/create/`,
         data: {
-          feedback_name: 'nimi',
+          feedback_name: feedback_name,
           feedback_contact: 'contact',
           feedback_text: 'text'
         },
