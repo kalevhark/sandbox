@@ -29,7 +29,7 @@ class  FeedbackDetail(View):
         return JsonResponse(data)
 
 @method_decorator(csrf_exempt, name='dispatch')
-class  FeedbackCreate(CreateView):
+class  FeedbackCreate(LoginRequiredMixin, CreateView):
     def  post(self, request):
         data =  dict()
         form = FeedbackForm(request.POST)
