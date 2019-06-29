@@ -17,7 +17,7 @@ $.ajax({
             </td>
         </tr>`;
     });
-    $('[#myTable] > tbody').append(rows);
+    $('#myTable > tbody').append(rows);
     $('.deleteBtn').each((i, elm) => {
         $(elm).on("click",  (e) => {
             deleteFeedback($(elm))
