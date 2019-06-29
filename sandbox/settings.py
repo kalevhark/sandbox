@@ -38,6 +38,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
+    'feedback.apps.HomeConfig'
     'image_uploader.apps.ImageUploaderConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -131,6 +132,10 @@ ROOT_URL = ''
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATIC_URL = ROOT_URL + '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = ROOT_URL + '/media/'
