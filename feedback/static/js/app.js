@@ -1,5 +1,4 @@
 function  createFeedback(){
-    feedbackId  =  $(el).data('id')
     $.ajax({
         url:  `/feedback/create/`,
         data: {
