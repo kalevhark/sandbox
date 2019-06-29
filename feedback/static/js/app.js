@@ -1,4 +1,6 @@
 function  createFeedback(){
+    var feedback_name = $("[name=your_name]").val();
+    console.log(feedback_name);
     $.ajax({
         url:  `/feedback/create/`,
         data: {
