@@ -62,3 +62,9 @@ class  FeedbackDelete(LoginRequiredMixin, View):
         else:
             data['error'] =  "Error!"
         return JsonResponse(data)
+
+from django.views.generic.edit import UpdateView
+
+class FeedbackEdit(UpdateView):
+    model = Feedback
+    fields = ['feedback_text']
