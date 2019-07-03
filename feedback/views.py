@@ -68,3 +68,4 @@ from django.views.generic.edit import UpdateView
 class FeedbackEdit(UpdateView):
     model = Feedback
     fields = ['feedback_text']
+    template_name_suffix = '_edit_form'
