@@ -13,4 +13,6 @@ urlpatterns = [
     path('<int:pk>', views.FeedbackDetail.as_view(), name='feedback_detail'),
     path('edit/<int:pk>', views.FeedbackEdit.as_view(), name='feedback_edit'),
     path('view/<int:pk>', views.FeedbackView.as_view(), name='feedback_view'),
+    path('front-edit/', include('front.urls')),
+
 ]

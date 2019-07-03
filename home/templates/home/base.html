@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+{% load front_tags %}
 
 <head>
   <meta charset="UTF-8">
@@ -45,6 +46,8 @@
     </div>
   </div>
 
+  {% front_edit_scripts %}
+  
   {% block javascript %}
   {% endblock %}
 </body>

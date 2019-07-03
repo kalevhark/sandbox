@@ -1,10 +1,13 @@
 {% extends 'home/base.html' %}
 
 {% load static %}
+{% load front_tags %}
 
 {% block content %}
 
+{% front_edit "placeholder_name" request.path request.LANGUAGE_CODE %}
 {{ object.feedback_text }}
+{% end_front_edit  %}
 
 {% endblock %}
 
