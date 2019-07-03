@@ -69,3 +69,8 @@ class FeedbackEdit(UpdateView):
     model = Feedback
     fields = ['feedback_text']
     template_name_suffix = '_edit_form'
+
+from django.views.generic.detail import DetailView
+
+class FeedbackView(DetailView):
+    model = Feedback
